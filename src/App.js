@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import EmojiSelector from './EmojiSelector';
+
 
 function App() {
+  const [selecteEmoji, setSelectEmoji] = useState(null);
+
+  const handleEmojiSelect = (emoji) => {
+    setSelectEmoji(emoji);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-container'>
+      <h1>Emoji Fun</h1>
+      
+      {selecteEmoji && (
+        <div className='select-emoji-container'>
+          <h2>You selected:</h2>
+          <p className='select-emoji'  >{selecteEmoji}</p>
+        </div>
+      )}
+
+    <EmojiSelector onSelect={handleEmojiSelect} />
+
     </div>
   );
 }

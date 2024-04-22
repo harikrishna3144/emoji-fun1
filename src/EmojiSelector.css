@@ -1,0 +1,20 @@
+/* .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.emoji-container{
+    display: flex;
+}
+.emoji{
+    font-size: 40px;
+}
+h2{
+    text-align: center;
+}
+
+li{
+    list-style-type: none;
+}
